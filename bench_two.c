@@ -786,17 +786,17 @@ int main(void)
                 if(scp->npar == 1)
                 {
                     r = (scp->fp)(pars->a1, 0);
-                    printf("\n             %9d", pars->a1); 
+                    printf("\n             %9llu", pars->a1);
                 }
                 else if(scp->npar == 2 && pars->a2 == 0)
                 {
                     r = (scp->fp)(pars->a1, pars->a2);
-                    printf("\n   %9d %9d", pars->a1, pars->a1); 
+                    printf("\n   %9llu %9llu", pars->a1, pars->a1);
                 }
                 else
                 {
                     r = (scp->fp)(pars->a1, pars->a2);
-                    printf("\n   %9d %9d", pars->a1, pars->a2); 
+                    printf("\n   %9llu %9llu", pars->a1, pars->a2);
                 }
                 out_res(r, 8, 0.0);
                 acc *= r;
