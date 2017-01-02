@@ -1,4 +1,4 @@
-MPIR_BASE=/var/tmp/kruppa/git/mpir/
+MPIR_BASE=$(HOME)/git/mpir/
 MPIR_INC=$(MPIR_BASE)
 MPIR_LIB=$(MPIR_BASE)/.libs
 GMP_BASE=$(HOME)
