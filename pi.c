@@ -202,13 +202,13 @@ fac_show(fac_t f)
   printf("\n");
 }
 
-inline void
+static inline void
 fac_reset(fac_t f)
 {
   f[0].num_facs = 0;
 }
 
-inline void
+static inline void
 fac_init_size(fac_t f, long int s)
 {
   if (s<INIT_FACS)
@@ -221,19 +221,19 @@ fac_init_size(fac_t f, long int s)
   fac_reset(f);
 }
 
-inline void
+static inline void
 fac_init(fac_t f)
 {
   fac_init_size(f, INIT_FACS);
 }
 
-inline void
+static inline void
 fac_clear(fac_t f)
 {
   free(f[0].fac);
 }
 
-inline void
+static inline void
 fac_resize(fac_t f, long int s)
 {
   if (f[0].max_facs < s) {
@@ -243,7 +243,7 @@ fac_resize(fac_t f, long int s)
 }
 
 /* f = base^pow */
-inline void
+static inline void
 fac_set_bp(fac_t f, unsigned long base, long int pow)
 {
   long int i;
@@ -257,7 +257,7 @@ fac_set_bp(fac_t f, unsigned long base, long int pow)
 }
 
 /* r = f*g */
-inline void
+static inline void
 fac_mul2(fac_t r, fac_t f, fac_t g)
 {
   long int i, j, k;
@@ -290,7 +290,7 @@ fac_mul2(fac_t r, fac_t f, fac_t g)
 }
 
 /* f *= g */
-inline void
+static inline void
 fac_mul(fac_t f, fac_t g)
 {
   fac_t tmp;
@@ -302,7 +302,7 @@ fac_mul(fac_t f, fac_t g)
 }
 
 /* f *= base^pow */
-inline void
+static inline void
 fac_mul_bp(fac_t f, unsigned long base, unsigned long pow)
 {
   fac_set_bp(ftmp, base, pow);
@@ -310,7 +310,7 @@ fac_mul_bp(fac_t f, unsigned long base, unsigned long pow)
 }
 
 /* remove factors of power 0 */
-inline void
+static inline void
 fac_compact(fac_t f)
 {
   long int i, j;
